@@ -53,11 +53,7 @@ resource "aws_iam_role_policy" "ecs_task_policy" {
           "secretsmanager:GetSecretValue",
           "kms:Decrypt"
         ]
-        Resource = [
-          "arn:aws:ssm:*:*:parameter/my-app/*",
-          "arn:aws:secretsmanager:*:*:secret:my-app/*",
-          "arn:aws:kms:*:*:key/*" 
-        ]
+        Resource = "*" 
       }
     ]
   })
